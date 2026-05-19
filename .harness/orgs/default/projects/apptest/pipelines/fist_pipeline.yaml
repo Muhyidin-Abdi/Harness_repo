@@ -1,0 +1,32 @@
+pipeline:
+  name: fist_pipeline
+  identifier: fist_pipeline
+  projectIdentifier: apptest
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: echo
+        identifier: echo
+        description: ""
+        type: Custom
+        spec:
+          execution:
+            steps:
+              - step:
+                  type: ShellScript
+                  name: hello world
+                  identifier: hello_world
+                  spec:
+                    shell: Bash
+                    executionTarget: {}
+                    source:
+                      type: Inline
+                      spec:
+                        script: |-
+                          echo "Hello from Harness!"
+                          dir
+                    environmentVariables: []
+                    outputVariables: []
+                  timeout: 10m
+        tags: {}
